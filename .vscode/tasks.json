@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build Plugin",
+			"type": "shell",
+			"command": "cmake --build build --config Debug",
+			"problemMatcher": []
+		},
+		{
+			"label": "CMake Build",
+			"type": "shell",
+			"command": "cmake --build build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": ["$gcc"]
+		},
+		{
+			"label": "CMake Configure",
+			"type": "shell",
+			"command": "cmake -B build -S .",
+			"problemMatcher": []
+		}
+	]
+}
