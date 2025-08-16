@@ -1,11 +1,19 @@
 {
     "version": "0.2.0",
     "configurations": [
-        {
+            {
+				"name": "Python: Current File",
+				"type": "debugpy",
+				"request": "launch",
+				"program": "${file}",
+				"console": "integratedTerminal",
+				"justMyCode": true
+			},        
+            {
             "name": "Attach to X-Plane",
             "type": "cppdbg",
             "request": "attach",
-            "program": "/media/nigel/XP12/ubuntu/X-Plane-12/X-Plane-x86_64",
+            "program": "/mnt/4tb/X-Plane 12/X-Plane-x86_64",
             "processId": "${command:pickProcess}",
             "MIMode": "gdb",
             "setupCommands": [

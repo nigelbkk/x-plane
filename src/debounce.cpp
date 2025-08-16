@@ -81,12 +81,13 @@ PLUGIN_API int XPluginStart(char *outName, char *outSig, char *outDesc) {
 	cmd_flaps_up = XPLMFindCommand("sim/flight_controls/flaps_up");
 	// load other commands similarly
 
-	js_fd = open("/dev/input/js0", O_RDONLY | O_NONBLOCK);
+	js_fd = open("/dev/input/js3", O_RDONLY | O_NONBLOCK);
 	if (js_fd < 0) {
 		XPLMDebugString("Failed to open joystick device\n");
 		return 0;
 	}
 
+	XPLMDebugString("debounce plugin opened joystick device\n");
 	XPLMRegisterFlightLoopCallback(JoystickPollCallback, 0.01, NULL);
 	return 1;
 }
